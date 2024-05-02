@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://ikdxdbh33xwv"]
+
+[ext_resource type="Script" path="res://script/StoryManager.gd" id="1_us0v8"]
+[ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="2_y0rag"]
+[ext_resource type="Resource" uid="uid://b0m857k6qgrn" path="res://ink/bruh.json" id="3_4e2f0"]
+[ext_resource type="Texture2D" uid="uid://le77rkm5xfwc" path="res://art/palette.png" id="4_f1ktm"]
+[ext_resource type="Shader" path="res://shaders/clamp_palette.gdshader" id="5_8t8d3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dbfi5"]
+shader = ExtResource("5_8t8d3")
+shader_parameter/palette = ExtResource("4_f1ktm")
+
+[node name="Main" type="Node2D"]
+
+[node name="StoryManager" type="Node" parent="."]
+script = ExtResource("1_us0v8")
+
+[node name="InkPlayer" type="Node" parent="StoryManager"]
+script = ExtResource("2_y0rag")
+ink_file = ExtResource("3_4e2f0")
+
+[node name="Palette" type="Sprite2D" parent="."]
+position = Vector2(133, 115)
+scale = Vector2(1, 7)
+texture = ExtResource("4_f1ktm")
+
+[node name="ClampPalette" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ClampPalette"]
+material = SubResource("ShaderMaterial_dbfi5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

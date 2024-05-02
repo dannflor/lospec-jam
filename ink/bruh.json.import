@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://b0m857k6qgrn"
+path="res://.godot/imported/bruh.json-0688d45553d1388633713c4054b72b99.res"
+
+[deps]
+
+source_file="res://ink/bruh.json"
+dest_files=["res://.godot/imported/bruh.json-0688d45553d1388633713c4054b72b99.res"]
+
+[params]
+
+compress=true
